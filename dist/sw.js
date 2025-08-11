@@ -50,7 +50,7 @@ self.addEventListener('fetch', (event) => {
               // Clone the response before caching
               const responseToCache = networkResponse.clone();
               cache.put(event.request, responseToCache);
-              console.log('💾 GLB cached:', url);
+              // console.log('💾 GLB cached:', url);
             }
             return networkResponse;
           }).catch((error) => {
