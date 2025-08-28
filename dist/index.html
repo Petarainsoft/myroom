@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyRoom System</title>
+    <!-- Domain Configuration Script - Edit this file to change domain after deployment -->
+    <script src="/config-domain.js"></script>
+    
+    <!-- Service Worker Registration for GLB Caching -->
+    <script>
+      // Register Service Worker for GLB file caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('✅ Service Worker registered successfully:', registration.scope);
+              
+              // Add cache management functions to window object
+              window.glbCache = {
+                clear: () => {
+                  return new Promise((resolve) => {
+                    const messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = (event) => {
+                      resolve(event.data.success);
+                    };
+                    registration.active?.postMessage(
+                      { type: 'CLEAR_GLB_CACHE' },
+                      [messageChannel.port2]
+                    );
+                  });
+                },
+                info: () => {
+                  return new Promise((resolve) => {
+                    const messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = (event) => {
+                      resolve(event.data.cacheInfo);
+                    };
+                    registration.active?.postMessage(
+                      { type: 'GET_CACHE_INFO' },
+                      [messageChannel.port2]
+                    );
+                  });
+                }
+              };
+            })
+            .catch((error) => {
+              console.error('❌ Service Worker registration failed:', error);
+            });
+        });
+      } else {
+        console.warn('⚠️ Service Worker not supported in this browser');
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-CBFAL8n_.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/MyRoomScene-Dtb4-clX.js">
+    <link rel="stylesheet" crossorigin href="/assets/MyRoomScene-6iw3k6k6.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-B2Xkke3O.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
