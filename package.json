@@ -3,16 +3,20 @@
   "version": "1.0.2",
   "private": false,
   "type": "module",
-  "main": "./dist/myroom-system.umd.js",
-  "module": "./dist/myroom-system.es.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "./dist/myroom-system.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/myroom-system.es.js",
-      "require": "./dist/myroom-system.umd.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     },
-    "./dist/myroom-system.css": "./dist/myroom-system.css"
+    "./dist/myroom-system.css": "./dist/myroom-system.css",
+    "./style.css": "./dist/myroom-system.css"
   },
   "files": [
     "dist",
