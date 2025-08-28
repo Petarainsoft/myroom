@@ -1,0 +1,24 @@
+export declare const useUIState: () => {
+    showAvatarOverlay: boolean;
+    showRoomOverlay: boolean;
+    setShowAvatarOverlay: import('react').Dispatch<import('react').SetStateAction<boolean>>;
+    setShowRoomOverlay: import('react').Dispatch<import('react').SetStateAction<boolean>>;
+    roomOverlayPosition: "left" | "right";
+    setRoomOverlayPosition: import('react').Dispatch<import('react').SetStateAction<"left" | "right">>;
+    showIntegrationGuide: boolean;
+    isClosing: boolean;
+    setShowIntegrationGuide: import('react').Dispatch<import('react').SetStateAction<boolean>>;
+    setIsClosing: import('react').Dispatch<import('react').SetStateAction<boolean>>;
+    activeTab: string;
+    setActiveTab: import('react').Dispatch<import('react').SetStateAction<string>>;
+    debugInfo: string;
+    babylonScene: any;
+    setDebugInfo: import('react').Dispatch<import('react').SetStateAction<string>>;
+    setBabylonScene: import('react').Dispatch<any>;
+    handleToggleAvatarOverlay: () => void;
+    handleToggleRoomOverlay: (position?: "left" | "right") => void;
+    closeIntegrationGuide: () => void;
+    handleTabChange: (tab: string) => void;
+    handleCopyCode: (code: string) => void;
+    handleToggleFullscreen: () => void;
+};
