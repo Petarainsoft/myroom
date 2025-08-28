@@ -1,25 +1,25 @@
-import { y as n, z as i, O as t, N as m, Q as r, $ as p, M as A, _ as M, V as g, J as u, X as C, Y as E, Z as O, a2 as R, a5 as _, a1 as F, a0 as I, a3 as N, a4 as S } from "./index-CpHxyan3.js";
+import { y as n, O as t, N as i, Q as m, $ as r, M as R, z as M, _ as y, V as A, X as g, Y as p, Z as u, J as C, a2 as E, a5 as O, a1 as _, a0 as F, a3 as I, a4 as N } from "./index-CeftPFLf.js";
 import "react/jsx-runtime";
 import "react";
 export {
   n as ApiService,
-  i as ApiWrapper,
   t as DEFAULT_AVATAR_CONFIG,
-  m as DEFAULT_ROOM_CONFIG,
-  r as DEFAULT_SCENE_CONFIG,
-  p as ManifestDropdown,
-  A as MyRoom,
-  M as MyRoomScene,
-  g as VERSION,
-  u as apiWrapper,
-  C as domainConfig,
-  E as getEmbedUrl,
-  O as initializeMyRoomConfig,
-  R as useAvatarManagement,
-  _ as useBackendData,
-  F as useItemManagement,
-  I as useRoomManagement,
-  N as useSceneConfiguration,
-  S as useUIState
+  i as DEFAULT_ROOM_CONFIG,
+  m as DEFAULT_SCENE_CONFIG,
+  r as ManifestDropdown,
+  R as MyRoom,
+  M as MyRoomRepository,
+  y as MyRoomScene,
+  A as VERSION,
+  g as domainConfig,
+  p as getEmbedUrl,
+  u as initializeMyRoomConfig,
+  C as myRoomRepository,
+  E as useAvatarManagement,
+  O as useBackendData,
+  _ as useItemManagement,
+  F as useRoomManagement,
+  I as useSceneConfiguration,
+  N as useUIState
 };
 //# sourceMappingURL=myroom-system.es.js.map

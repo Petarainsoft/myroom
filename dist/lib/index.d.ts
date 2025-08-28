@@ -1,10 +1,10 @@
 export { MyRoom } from './components/MyRoom';
 export type { MyRoomProps } from './types';
 export type { MyRoomRef } from './types';
-export { ApiService, ApiWrapper, default as apiWrapper } from './services';
-export type { ItemData, CategoryData, RoomData, AvatarConfig, Room, AvatarPart, ItemCategory, ApiItem, AvatarCategory, DefaultPreset } from './services';
+export { ApiService, MyRoomRepository, default as myRoomRepository } from './services';
+export type { ItemData, CategoryData, RoomData, AvatarConfig, Room, AvatarPart, ItemCategory, ApiItem, AvatarCategory, DefaultManifest } from './services';
 export type { ApiItem as Item } from './services';
-export type { MyRoomConfig, SceneConfig, AvatarConfig as AvatarConfigProps, RoomConfig, ItemConfig, } from './types';
+export type { MyRoomConfig, SceneConfig, AvatarConfig as AvatarConfigProps, RoomConfig, } from './types';
 export { DEFAULT_ROOM_CONFIG, DEFAULT_AVATAR_CONFIG, DEFAULT_SCENE_CONFIG } from './constants';
 export { domainConfig, getEmbedUrl, initializeMyRoomConfig } from '../shared/config/appConfig';
 export { MyRoomScene, ManifestDropdown, } from '../shared/components';

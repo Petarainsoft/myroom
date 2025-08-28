@@ -11,7 +11,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/myroom-system.es.js",
       "require": "./dist/myroom-system.umd.js"
-    }
+    },
+    "./dist/myroom-system.css": "./dist/myroom-system.css"
   },
   "files": [
     "dist",

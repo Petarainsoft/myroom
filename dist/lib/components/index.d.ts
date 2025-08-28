@@ -17,20 +17,26 @@ export type { MyRoomProps, MyRoomRef } from '../types';
  *   apiKey: 'your-api-key-here'
  * });
  *
- * // Simple mode - 3D scene only
+ * // Basic usage
  * <MyRoom
- *   roomConfig={{ roomResourceId: 'living-room' }}
- *   avatarConfig={{ gender: 'female' }}
- *   onSceneReady={(scene) => console.log('Scene ready', scene)}
+ *   roomConfig={{ initialRoom: "room1" }}
+ *   avatarConfig={{ defaultGender: "female" }}
+ *   sceneConfig={{ enableShadows: true }}
+ *   onSceneReady={(scene) => console.log("Scene ready:", scene)}
  * />
  *
- * // Full mode - with UI controls
+ * // With UI controls and overlays
  * <MyRoom
- *   showControls={true}
- *   initialRoom="bedroom"
  *   showAvatarOverlay={true}
- *   onAvatarChange={(avatar) => console.log('Avatar changed', avatar)}
- *   onRoomChange={(room) => console.log('Room changed', room)}
+ *   showRoomOverlay={true}
+ *   roomConfig={{ initialRoom: "room1" }}
+ *   avatarConfig={{ defaultGender: "female" }}
+ *   sceneConfig={{ enableShadows: true }}
+ *   onSceneReady={(scene) => console.log("Scene ready:", scene)}
+ *   onAvatarChange={(avatar) => console.log("Avatar changed:", avatar)}
+ *   onRoomChange={(room) => console.log("Room changed:", room)}
+ *   onItemAdd={(item) => console.log("Item added:", item)}
+ *   onItemRemove={(itemId) => console.log("Item removed:", itemId)}
  * />
  * ```
  */
