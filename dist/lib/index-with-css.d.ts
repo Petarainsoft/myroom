@@ -1,0 +1,11 @@
+export * from './components/MyRoom';
+export type { MyRoomProps, MyRoomRef } from './types';
+export { ApiService, MyRoomRepository, default as myRoomRepository } from './services';
+export type { ItemData, CategoryData, RoomData, AvatarConfig, Room, AvatarPart, ItemCategory, ApiItem, AvatarCategory, DefaultManifest, ApiItem as Item } from './services';
+export type { MyRoomConfig, SceneConfig, AvatarConfig as AvatarConfigProps, RoomConfig } from './types';
+export { DEFAULT_ROOM_CONFIG, DEFAULT_AVATAR_CONFIG, DEFAULT_SCENE_CONFIG } from './constants';
+export { domainConfig, getEmbedUrl, initializeMyRoomConfig } from '../shared/config/appConfig';
+export { MyRoomScene, ManifestDropdown } from '../shared/components';
+export { useRoomManagement, useItemManagement, useAvatarManagement, useSceneConfiguration, useUIState, useBackendData } from '../shared/hooks';
+export { type Gender, type PartItem } from '../shared/types';
+export declare const VERSION = "1.0.0";

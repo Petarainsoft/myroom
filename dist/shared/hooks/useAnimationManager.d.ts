@@ -11,7 +11,9 @@ interface UseAnimationManagerParams {
     allWalkAnimationsRef: React.MutableRefObject<any[]>;
     allCurrentAnimationsRef: React.MutableRefObject<any[]>;
 }
-export declare const useAnimationManager: ({ sceneRef, avatarConfig, domainConfig, idleAnimRef, walkAnimRef, currentAnimRef, allIdleAnimationsRef, allWalkAnimationsRef, }: UseAnimationManagerParams) => {
+export declare const useAnimationManager: ({ sceneRef, avatarConfig, domainConfig, idleAnimRef, walkAnimRef, currentAnimRef, allIdleAnimationsRef, allWalkAnimationsRef, componentId, }: UseAnimationManagerParams & {
+    componentId?: string;
+}) => {
     addAnimationTargets: (newMeshes: any[]) => void;
     loadAnimationFromGLB: (animationName: string, loadedAvatarPartsRef: React.MutableRefObject<Record<string, any[]>>, pendingPartsRef: React.MutableRefObject<Record<string, any[]>>, options?: {
         playImmediately?: boolean;
