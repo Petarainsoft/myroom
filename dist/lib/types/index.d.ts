@@ -43,6 +43,7 @@ export interface SceneConfig {
         exposure?: number;
     };
     enableSkybox?: boolean;
+    backgroundColor?: string;
     enableShadows?: boolean;
     lighting?: {
         intensity?: number;
@@ -110,4 +111,27 @@ export interface MyRoomConfig {
         showInstructions?: boolean;
         instructionText?: string;
     };
+}
+export interface MyAvatarProps {
+    avatarConfig?: AvatarConfigProps;
+    sceneConfig?: SceneConfig;
+    showAvatarOverlay?: boolean;
+    showInstructions?: boolean;
+    instructionText?: string;
+    onSceneReady?: (scene: any) => void;
+    onAvatarChange?: (config: AvatarConfig) => void;
+    onError?: (error: Error) => void;
+    className?: string;
+    style?: CSSProperties;
+    height?: string | number;
+    width?: string | number;
+}
+export interface MyAvatarRef {
+    getScene: () => any;
+    isSceneReady?: () => boolean;
+    updateAvatar: (config: any) => void;
+    getCurrentAvatar: () => any;
+    takeScreenshot: () => Promise<string>;
+    toggleAvatarOverlay: () => void;
+    dispose?: () => void;
 }

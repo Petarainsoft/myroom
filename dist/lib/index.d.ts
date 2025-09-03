@@ -1,6 +1,9 @@
 export { MyRoom } from './components/MyRoom';
+export { MyAvatar } from './components/MyAvatar';
 export type { MyRoomProps } from './types';
 export type { MyRoomRef } from './types';
+export type { MyAvatarProps } from './types';
+export type { MyAvatarRef } from './types';
 export { ApiService, MyRoomRepository, default as myRoomRepository } from './services';
 export type { ItemData, CategoryData, RoomData, AvatarConfig, Room, AvatarPart, ItemCategory, ApiItem, AvatarCategory, DefaultManifest } from './services';
 export type { ApiItem as Item } from './services';
