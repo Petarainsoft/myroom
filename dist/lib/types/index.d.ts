@@ -52,6 +52,11 @@ export interface SceneConfig {
     };
     cameraSettings?: CameraConfig;
     renderSettings?: RenderConfig;
+    zoomSettings?: {
+        enableZoom?: boolean;
+        sensitivity?: number;
+        initialDistance?: number;
+    };
 }
 export interface CameraConfig {
     position?: {
@@ -115,6 +120,9 @@ export interface MyRoomConfig {
 export interface MyAvatarProps {
     avatarConfig?: AvatarConfigProps;
     sceneConfig?: SceneConfig;
+    enableZoom?: boolean;
+    zoomSensitivity?: number;
+    initialZoom?: number;
     showAvatarOverlay?: boolean;
     showInstructions?: boolean;
     instructionText?: string;
