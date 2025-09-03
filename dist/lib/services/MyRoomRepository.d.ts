@@ -17,10 +17,10 @@ export declare class MyRoomRepository {
     private filterS3Data;
     /**
      * Configure the API wrapper with custom settings
-     * @param baseUrl - Backend API base URL
-     * @param apiKey - API key for authentication
+     * @param apiKey - Optional API key for authentication (defaults to ApiService configuration)
+     * @param baseUrl - Optional backend API base URL (defaults to ApiService configuration)
      */
-    configure(baseUrl: string, apiKey: string): void;
+    configure(apiKey?: string, baseUrl?: string): void;
     /**
      * Get current base URL configured for ApiService
      */
@@ -85,6 +85,15 @@ export declare class MyRoomRepository {
      * @returns Promise<Item[]> - List of matching items
      */
     searchItems(query: string, categoryId?: string, page?: number, limit?: number): Promise<Item[]>;
+    /**
+     * Get all items with pagination and sorting options
+     * @param page - Page number for pagination (default: 1)
+     * @param limit - Items per page (default: 50)
+     * @param sortBy - Optional field to sort by
+     * @param sortOrder - Sort order: 'asc' or 'desc' (default: 'asc')
+     * @returns Promise<Item[]> - List of all items
+     */
+    getAllItems(page?: number, limit?: number, sortBy?: string, sortOrder?: 'asc' | 'desc'): Promise<Item[]>;
     /**
      * Get the default manifest configuration
      * @returns Promise<DefaultManifest> - Default manifest data

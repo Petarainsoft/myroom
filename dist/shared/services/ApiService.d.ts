@@ -92,6 +92,10 @@ declare class ApiService {
      */
     getItemsByCategory(categoryId: string, page?: number, limit?: number): Promise<any>;
     /**
+     * Get all items with pagination and sorting
+     */
+    getAllItems(page?: number, limit?: number, sortBy?: string, sortOrder?: 'asc' | 'desc'): Promise<any>;
+    /**
      * Search items across categories
      */
     searchItems(query: string, categoryId?: string, page?: number, limit?: number): Promise<any>;
