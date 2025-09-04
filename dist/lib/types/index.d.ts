@@ -17,6 +17,7 @@ export interface MyRoomProps {
     onRoomChange?: (room: any) => void;
     onItemAdd?: (item: any) => void;
     onItemRemove?: (itemId: string) => void;
+    onItemInteraction?: (item: any) => void;
     onError?: (error: Error) => void;
     className?: string;
     style?: CSSProperties;
@@ -85,10 +86,13 @@ export interface MyRoomRef {
     getCurrentRoom: () => any;
     updateAvatar: (config: any) => void;
     getCurrentAvatar: () => any;
+    showAvatar: () => void;
+    hideAvatar: () => void;
     addItem: (item: any) => void;
     removeItem: (itemId: string) => void;
     getItems?: () => any[];
     getLoadedItems: () => any[];
+    rotateItem: (itemId: string, degrees: number, duration: number) => void;
     exportConfig: () => any;
     importConfig: (config: any) => void;
     takeScreenshot: () => Promise<string>;

@@ -12,6 +12,7 @@ interface PointerManagerProps {
     targetDisc: Mesh;
     moveAvatarToPosition: (targetPosition: Vector3, targetDisc: Mesh | null) => void;
     onSelectItem?: (item: any) => void;
+    onItemInteraction?: (item: any) => void;
     onItemTransformChange?: (itemId: string, transform: {
         position: {
             x: number;
@@ -47,6 +48,7 @@ export declare class PointerManager {
     private targetDisc;
     private moveAvatarToPosition;
     private onSelectItem?;
+    private onItemInteraction?;
     private onItemTransformChange?;
     private cameraFollowStateRef;
     private isRightMouseDownRef;

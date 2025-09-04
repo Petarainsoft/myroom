@@ -15,6 +15,7 @@ interface MyRoomSceneProps {
     onGizmoModeChange?: (mode: "position" | "rotation" | "scale") => void;
     selectedItem?: any;
     onSelectItem?: (item: any) => void;
+    onItemInteraction?: (item: any) => void;
     onItemTransformChange?: (itemId: string, transform: {
         position: {
             x: number;
@@ -46,6 +47,9 @@ interface MyRoomSceneProps {
 interface MyRoomSceneRef {
     resetCamera: () => void;
     getCurrentSceneConfig: () => ManifestConfig;
+    rotateItem: (itemId: string, degrees: number, duration: number) => void;
+    showAvatar: () => void;
+    hideAvatar: () => void;
 }
 declare const MyRoomScene: import('react').ForwardRefExoticComponent<MyRoomSceneProps & import('react').RefAttributes<MyRoomSceneRef>>;
 export { MyRoomScene };
