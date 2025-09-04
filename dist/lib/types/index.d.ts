@@ -127,6 +127,7 @@ export interface MyAvatarProps {
     enableZoom?: boolean;
     zoomSensitivity?: number;
     initialZoom?: number;
+    enableAdvancedUI?: boolean;
     showAvatarOverlay?: boolean;
     showInstructions?: boolean;
     instructionText?: string;

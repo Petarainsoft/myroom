@@ -3,8 +3,8 @@ export interface BackendAvatarPart {
     name: string;
     description?: string;
     resourceId: string;
-    gender: 'MALE' | 'FEMALE';
-    partType: 'HAIR' | 'TOP' | 'BOTTOM' | 'SHOES' | 'ACCESSORY' | 'FULLSET' | 'BODY';
+    gender: "MALE" | "FEMALE";
+    partType: "HAIR" | "TOP" | "BOTTOM" | "SHOES" | "ACCESSORY" | "FULLSET" | "BODY";
     s3Url: string;
     isPremium: boolean;
     isFree: boolean;
