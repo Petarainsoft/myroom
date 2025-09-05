@@ -50,6 +50,11 @@ interface MyRoomSceneRef {
     rotateItem: (itemId: string, degrees: number, duration: number) => void;
     showAvatar: () => void;
     hideAvatar: () => void;
+    addAvatar: (avatarConfig: AvatarConfig, position: {
+        x: number;
+        y: number;
+        z: number;
+    }) => string;
 }
 declare const MyRoomScene: import('react').ForwardRefExoticComponent<MyRoomSceneProps & import('react').RefAttributes<MyRoomSceneRef>>;
 export { MyRoomScene };
