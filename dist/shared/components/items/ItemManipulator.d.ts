@@ -23,8 +23,9 @@ interface ItemManipulatorProps {
     onSelectItem?: (item: any) => void;
     loadedItemMeshesRef: React.MutableRefObject<any[]>;
     highlightDiscRef: React.MutableRefObject<Mesh | null>;
+    highlightCirclesRef: React.MutableRefObject<Mesh[] | null>;
 }
-export declare const useItemManipulator: ({ gizmoMode, selectedItem, utilityLayerRef, onItemTransformChange, onSelectItem, loadedItemMeshesRef, highlightDiscRef, }: ItemManipulatorProps) => {
+export declare const useItemManipulator: ({ gizmoMode, selectedItem, utilityLayerRef, onItemTransformChange, onSelectItem, loadedItemMeshesRef, highlightDiscRef, highlightCirclesRef, }: ItemManipulatorProps) => {
     selectItem: (mesh: any) => void;
     deselectItem: () => void;
     updateGizmo: (mesh: any) => void;

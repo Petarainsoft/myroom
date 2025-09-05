@@ -1,10 +1,10 @@
 import { default as React } from 'react';
-import { Scene, ArcRotateCamera, Vector3, TransformNode, Mesh } from '@babylonjs/core';
+import { Scene, ArcRotateCamera, Vector3, AbstractMesh, TransformNode, Mesh } from '@babylonjs/core';
 interface PointerManagerProps {
     scene: Scene;
     camera: ArcRotateCamera;
     avatarRef: React.MutableRefObject<TransformNode | null>;
-    selectedMeshRef: React.MutableRefObject<TransformNode | null>;
+    selectedMeshRef: React.MutableRefObject<AbstractMesh | null>;
     highlightDiscRef: React.MutableRefObject<Mesh | null>;
     highlightDiscCircles: Mesh[];
     highlightCirclesRef: React.MutableRefObject<Mesh[] | null>;
@@ -13,23 +13,7 @@ interface PointerManagerProps {
     moveAvatarToPosition: (targetPosition: Vector3, targetDisc: Mesh | null) => void;
     onSelectItem?: (item: any) => void;
     onItemInteraction?: (item: any) => void;
-    onItemTransformChange?: (itemId: string, transform: {
-        position: {
-            x: number;
-            y: number;
-            z: number;
-        };
-        rotation: {
-            x: number;
-            y: number;
-            z: number;
-        };
-        scale: {
-            x: number;
-            y: number;
-            z: number;
-        };
-    }) => void;
+    onItemTransformChange?: (itemId: string, transform: any) => void;
     cameraFollowStateRef: React.MutableRefObject<any>;
     isRightMouseDownRef: React.MutableRefObject<boolean>;
     groundSize: number;
@@ -48,8 +32,6 @@ export declare class PointerManager {
     private targetDisc;
     private moveAvatarToPosition;
     private onSelectItem?;
-    private onItemInteraction?;
-    private onItemTransformChange?;
     private cameraFollowStateRef;
     private isRightMouseDownRef;
     private groundHalfSize;
@@ -66,7 +48,6 @@ export declare class PointerManager {
     constructor(props: PointerManagerProps);
     private initializePointerObservable;
     private rayPlaneIntersection;
-    private findRootItem;
     private clampPositionToGround;
     private setAvatarVisibility;
     private scaleHighlightDisc;
@@ -74,8 +55,8 @@ export declare class PointerManager {
     private setHighlightDiscRotation;
     private toggleHighlightDisc;
     private deselectItem;
-    private notifyTransformChange;
     dispose(): void;
+    updateAvatarVisibility(isVisible: boolean): void;
     handleDeselectItem(): void;
 }
 export {};

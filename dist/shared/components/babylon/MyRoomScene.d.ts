@@ -54,7 +54,7 @@ interface MyRoomSceneRef {
         x: number;
         y: number;
         z: number;
-    }) => string;
+    }) => Promise<string>;
 }
 declare const MyRoomScene: import('react').ForwardRefExoticComponent<MyRoomSceneProps & import('react').RefAttributes<MyRoomSceneRef>>;
 export { MyRoomScene };
